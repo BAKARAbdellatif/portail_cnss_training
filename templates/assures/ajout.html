@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title %}Assures{% endblock %}
+
+{% block content %}
+{% load crispy_forms_tags %}
+<h2>Ajouter un nouvel assuré</h2>
+
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>
+
+{% endblock %}
+

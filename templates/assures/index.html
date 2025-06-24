@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Assures{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="row">
+      <div class="col-10">
+        <h2 class="mb-3">Liste des Assurés</h2>
+      </div>
+      <div class="col">
+        <a href="{% url 'ajout_assure' %}" class="btn btn-dark">Ajouter</a>
+      </div>
+    </div>
+
+    <table class="table table-bordered table-striped">
+            <tr>
+                <th>ID</th>
+                <th>Nom</th>
+                <th>Adresse</th>
+                <th>Date de naissance</th>
+                <th>Numéro de CNSS</th>
+                <th>Actions</th>
+            </tr>
+
+        {% for assure in assures %}
+            <tr>
+                <td>{{ assure.id }}</td>
+                <td>{{ assure.nom }}</td>
+                <td>{{ assure.adresse }}</td>
+                <td>{{ assure.date_naissance }}</td>
+                <td>{{ assure.numero_cnss }}</td>
+                <td>
+                    <a href="{% url 'edit_assure' assure.id %}" class="btn btn-primary">Modifier</a>
+                </td>
+            </tr>
+      {% endfor %}
+    </table>
+</div>
+{% endblock %}
+

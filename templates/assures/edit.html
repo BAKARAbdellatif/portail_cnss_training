@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Assures{% endblock %}
+{% block content %}
+{% load crispy_forms_tags %}
+<h2>Modifier un assure</h2>
+<form method="post" novalidate>
+    {% csrf_token %}
+    {{ form|crispy }}
+    <button type="submit" class="btn btn-primary">Modifier</button>
+    <a href="{% url 'assures_list' %}" class="btn btn-secondary">Annuler</a>
+</form>
+{% endblock %}
