@@ -1,3 +1,9 @@
+# authcnss/views.py
+
+from django.shortcuts import render, redirect
+from django.contrib.auth import login
+from django.contrib.auth.models import Group
+from .forms import RegisterForm
 
 def register(request):
     if request.method == 'POST':
