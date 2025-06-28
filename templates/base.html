@@ -4,27 +4,55 @@
     <meta charset="UTF-8">
     <title>{% block title %}Portail CNSS{% endblock %}</title>
 
-    <!-- Bootstrap CSS CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-..." crossorigin="anonymous">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 
     {% load static %}
 </head>
 <body>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
   <div class="container">
     <a class="navbar-brand" href="/">Portail CNSS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavbar">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNavbar">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a class="nav-link active" href="{% url 'home' %}">Accueil</a>
+        </li>
+
+        <!-- Dropdown Services -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="servicesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Services
+          </a>
+          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="servicesDropdown">
+            <li><a class="dropdown-item" href="{% url 'liste_assures' %}">Espace assuré</a></li>
+            <li><a class="dropdown-item" href="#">Demandes en ligne</a></li>
+            <li><a class="dropdown-item" href="#">Mise à jour de profil</a></li>
+          </ul>
+        </li>
+
+        <li class="nav-item">
+          <a class="nav-link" href="#">Connexion</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Inscription</a>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
 
-<div class="container">
-    {% block content %}
-    {% endblock %}
-</div>
 
-<!-- Bootstrap JS CDN (optionnel si tu utilises du JS Bootstrap) -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-..." crossorigin="anonymous"></script>
+<main class="container mb-5">
+    {% block content %}{% endblock %}
+</main>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -1,8 +1,40 @@
 {% extends "base.html" %}
 
-{% block title %}Home{% endblock %}
+{% block title %}Accueil - Portail CNSS{% endblock %}
 
 {% block content %}
+<div class="text-center py-5">
+    <h1 class="display-5 fw-bold">Bienvenue sur le Portail CNSS</h1>
+    <p class="lead">Accédez facilement à vos services de sécurité sociale en ligne.</p>
+    <a href="#" class="btn btn-dark  btn-lg mt-3">Accéder aux services</a>
+</div>
 
+<hr>
+
+<div class="row text-center">
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Suivi des cotisations</h5>
+                <p class="card-text">Consultez vos cotisations sociales en toute transparence.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Demandes en ligne</h5>
+                <p class="card-text">Effectuez vos démarches sans vous déplacer.</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 mb-4">
+        <div class="card h-100 shadow-sm">
+            <div class="card-body">
+                <h5 class="card-title">Mise à jour de profil</h5>
+                <p class="card-text">Modifiez vos informations personnelles à tout moment.</p>
+            </div>
+        </div>
+    </div>
+</div>
 {% endblock %}
-

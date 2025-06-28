@@ -31,7 +31,7 @@
                 <td>{{ assure.date_naissance }}</td>
                 <td>{{ assure.numero_cnss }}</td>
                 <td>
-                    <a href="{% url 'edit_assure' assure.id %}" class="btn btn-primary">Modifier</a>
+                    <a href="{% url 'modifier_assure' assure.id %}" class="btn btn-primary">Modifier</a>
                 </td>
             </tr>
       {% endfor %}

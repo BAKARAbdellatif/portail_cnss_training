@@ -20,7 +20,7 @@ from assures.views import home
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home, name="home_page"),
+    path('', home, name="home"),
     path('assure/', include('assures.urls')),
 ]
 
